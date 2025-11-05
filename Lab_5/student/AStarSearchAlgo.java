@@ -19,11 +19,16 @@ public class AStarSearchAlgo {
         frontierSet.add(iNode);
         gScores.put(iNode, 0);
 
+        int iterations = 0;
+
         while (!frontier.isEmpty()) {
+            iterations++;
+
             Node current = frontier.poll();
             frontierSet.remove(current);
 
             if (current.equals(gNode)) {
+                System.out.println("A*: Found solution in " + iterations + " iterations, path cost (steps) = " + current.getG());
                 return current; // tìm thấy lời giải
             }
 
@@ -47,6 +52,8 @@ public class AStarSearchAlgo {
                 }
             }
         }
+
+        System.out.println("A*: No solution found after " + iterations + " iterations");
         return null;
     }
 }
