@@ -1,4 +1,4 @@
-package Lab_2;
+package Lab_2_3;
 
 public class Edge implements Comparable<Edge>{
 	private Node begin;

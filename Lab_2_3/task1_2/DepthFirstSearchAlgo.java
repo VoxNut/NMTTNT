@@ -1,11 +1,9 @@
-package Lab_2.task1_2;
+package Lab_2_3.task1_2;
 
-import Lab_2.Node;
+import Lab_2_3.Node;
 
 import java.util.HashSet;
-import java.util.Queue;
 import java.util.Set;
-import java.util.Stack;
 
 public class DepthFirstSearchAlgo {
 	// Task 1.

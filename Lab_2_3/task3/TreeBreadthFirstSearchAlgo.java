@@ -1,9 +1,10 @@
-package Lab_2.task3;
+package Lab_2_3.task3;
 
-import Lab_2.Node;
+import Lab_2_3.Node;
 
-public class TreeDepthFirstSearchAlgo {
-// Find the path from Root node to Goal
+public class TreeBreadthFirstSearchAlgo {
+
+	// Find the path from Root node to Goal
 	public Node execute(Node tree, String goal) {
 		// TODO
 		return null;
