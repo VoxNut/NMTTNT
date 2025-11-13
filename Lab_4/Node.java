@@ -9,7 +9,7 @@ public class Node {
     private double g;// from Start to this node
     private double h;// from this node to the goal
     private double totalCost;
-    private List<Edge> children = new ArrayList<Edge>();
+    private List<Edge> children = new ArrayList<>();
 
     public Node(String label) {
         this.label = label;
