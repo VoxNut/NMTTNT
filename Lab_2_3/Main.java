@@ -1,9 +1,9 @@
 package Lab_2_3;
 
-import Lab_2_3.task1_2.BreadthFirstSearchAlgo;
-import Lab_2_3.task1_2.DepthFirstSearchAlgo;
-import Lab_2_3.task4.UniformCostSearchAlgo;
-import Lab_2_3.task5.DepthLimitedSearchAlgo;
+import Lab_2_3.Task_1_2.BreadthFirstSearchAlgo;
+import Lab_2_3.Task_1_2.DepthFirstSearchAlgo;
+import Lab_2_3.Task_4_5.UniformCostSearchAlgo;
+import Lab_2_3.Task_6.DepthLimitedSearchAlgo;
 
 public class Main {
     public static void main(String[] args) {
@@ -28,7 +28,7 @@ public class Main {
         DepthLimitedSearchAlgo algo4 = new DepthLimitedSearchAlgo();
 
 
-        Node result = algo4.execute(nodeS, "G", 4);
+        Node result = algo2.execute(nodeS, "A", "G");
 
         System.out.println(NodeUtils.printPath(result));
 //        System.out.println(result.findNode(nodeS,"A"));

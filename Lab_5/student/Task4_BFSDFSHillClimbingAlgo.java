@@ -2,6 +2,8 @@ package Lab_5.student;
 
 import java.util.*;
 
+import Lab_5.student.Task_1.Puzzle;
+
 public class Task4_BFSDFSHillClimbingAlgo {
 
     //	Task 4.1

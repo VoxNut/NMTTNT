@@ -1,9 +1,8 @@
-package Lab_8;
+package Lab_8.Task_2_4;
 
-import Lab_8.Task_1.MiniMaxSearchAlgo;
-import Lab_8.Task_3.AlphaBetaRightToLeftSearchAlgo;
+import Lab_8.Node;
 
-public class TestMiniMaxSearchAlgo {
+public class TestAlphaBetaSearchAlgo {
 	public static void main(String[] args) {
 		Node root = new Node("A");
 		Node nodeB = new Node("B");
@@ -32,8 +31,7 @@ public class TestMiniMaxSearchAlgo {
 		nodeD.addChild(nodeL);
 		nodeD.addChild(nodeM);
 
-		MiniMaxSearchAlgo algo = new MiniMaxSearchAlgo();
-		AlphaBetaRightToLeftSearchAlgo algo2 = new AlphaBetaRightToLeftSearchAlgo();
+		AlphaBetaSearchAlgo algo = new AlphaBetaSearchAlgo();
 
 		algo.execute(root);
 	}

@@ -1,9 +1,8 @@
 package Lab_4;
 
 import Lab_4.Task_1_4.GreedyBestFirstSearchAlgo;
-import Lab_4.Task_2_3_5.AStarSearchAlgo;
 
-public class TestAStar {
+public class TestGreedy {
     public static void main(String[] args) {
         Node s = new Node("S", 6);
         Node b = new Node("B", 4);
@@ -24,15 +23,15 @@ public class TestAStar {
         d.addEdge(f, 2);
         f.addEdge(g, 1);
         e.addEdge(g, 2);
- 
-        GreedyBestFirstSearchAlgo algo1 = new GreedyBestFirstSearchAlgo();
 
-        AStarSearchAlgo algo2 = new AStarSearchAlgo();
+        GreedyBestFirstSearchAlgo algo = new GreedyBestFirstSearchAlgo();
+        
+        System.out.println("Test Task 1 (S->G):");
+        Node res = algo.execute(s, "G");
+        System.out.println(NodeUtils.printPath(res)); 
 
-        System.out.println(NodeUtils.printPath(algo2.execute(s, "G")));
-
-//		AStarSearchAlgo aStar = new AStarSearchAlgo();
-//		Node res = aStar.execute(s, g.getLabel());
-//		System.out.println(NodeUtils.printPath(res));
+        System.out.println("\nTest Task 4 (Start from B -> G):");
+        Node resStart = algo.execute(s, "B", "G");
+        System.out.println(NodeUtils.printPath(resStart));
     }
 }

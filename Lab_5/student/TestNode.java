@@ -1,5 +1,7 @@
 package Lab_5.student;
 
+import Lab_5.student.Task_1.Puzzle;
+
 public class TestNode {
 
     public static void main(String[] args) {

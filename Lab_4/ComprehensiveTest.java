@@ -1,5 +1,7 @@
 package Lab_4;
 
+import Lab_4.Task_2_3_5.AStarSearchAlgo;
+
 public class ComprehensiveTest {
 
     public static void main(String[] args) {

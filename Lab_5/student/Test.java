@@ -1,5 +1,8 @@
 package Lab_5.student;
 
+import Lab_5.student.Task_1.Puzzle;
+import Lab_5.student.Task_3.AStarSearchAlgo;
+
 public class Test {
 
     public static void main(String[] args) {
