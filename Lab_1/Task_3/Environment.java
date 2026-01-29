@@ -89,15 +89,11 @@ public class Environment {
     }
 
     public void run(int steps) {
-        System.out.println("Initial Environment: " + envState + ", Agent at: " + agent.getLocation());
         for (int i = 0; i < steps; i++) {
             Percept p = getPerceptSeenBy();
             Action a = agent.execute(p);
             executeAction(a);
-            System.out.printf("Step %d: Agent Loc.: %s, Action: %s, Env: %s, Score: %d%n",
-                    i + 1, agent.getLocation(), a, envState, score);
         }
-        System.out.println("Final Score: " + score);
     }
 }
 

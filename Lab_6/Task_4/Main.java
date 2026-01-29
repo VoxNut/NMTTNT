@@ -10,13 +10,13 @@ public class Main {
 
         HillClimbingSearchNQueen hc = new HillClimbingSearchNQueen();
         Node resHC = hc.executeHillClimbingWithRandomRestart(initial);
-        System.out.println("Result H: " + resHC.getH());
-        System.out.println("Step Climbed: " + hc.getStepClimbed());
-        System.out.println("Total Steps (Restart): " + hc.getStepClimbedAfterRandomRestart());
-        System.out.println("Random Restarts: " + hc.getRandomRestarts());
+        System.out.println("H: " + resHC.getH());
+        System.out.println("step: " + hc.getStepClimbed());
+        System.out.println("total steps: " + hc.getStepClimbedAfterRandomRestart());
+        System.out.println("random restarts: " + hc.getRandomRestarts());
 
         SA_SearchAlgo sa = new SA_SearchAlgo();
         Node resSA = sa.execute(initial);
-        System.out.println("Result H: " + resSA.getH());
+        System.out.println("H: " + resSA.getH());
     }
 }

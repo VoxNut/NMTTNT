@@ -22,7 +22,7 @@ public class GridEnvironment {
         this.agent = agent;
         this.grid = new CellState[rows][cols];
 
-        // Randomly assign states
+
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
                 double x = rand.nextDouble();
@@ -35,7 +35,7 @@ public class GridEnvironment {
             }
         }
 
-        // Place agent in a random non-obstacle cell
+  
         do {
             agentRow = rand.nextInt(rows);
             agentCol = rand.nextInt(cols);
@@ -44,7 +44,6 @@ public class GridEnvironment {
         agent.setLocation("("+agentRow+","+agentCol+")");
     }
 
-    /** Return true if all non-obstacle cells are clean */
     private boolean isAllClean() {
         for (int r = 0; r < rows; r++)
             for (int c = 0; c < cols; c++)
@@ -53,7 +52,6 @@ public class GridEnvironment {
         return true;
     }
 
-    /** Percept for the agent at its current location */
     private Percept getPercept() {
         return new Percept(agent.getLocation(),
                 grid[agentRow][agentCol] == CellState.DIRTY
@@ -61,7 +59,6 @@ public class GridEnvironment {
                         : Environment.LocationState.CLEAN);
     }
 
-    /** Attempt to perform an action */
     private void execute(Action a) {
         String act = a.getName();
         switch (act) {
@@ -83,45 +80,36 @@ public class GridEnvironment {
         }
     }
 
-    /** Movement helper */
     private void move(int dr, int dc) {
         int newR = agentRow + dr;
         int newC = agentCol + dc;
 
         if (newR < 0 || newC < 0 || newR >= rows || newC >= cols
                 || grid[newR][newC] == CellState.OBSTACLE) {
-            score -= 100; // invalid move
+            score -= 100;
             return;
         }
 
         agentRow = newR;
         agentCol = newC;
         agent.setLocation("(" + agentRow + "," + agentCol + ")");
-        score -= 10; // valid move
+        score -= 10;
     }
 
-    /** Main simulation loop */
     public void run(int maxSteps) {
-        System.out.println("Initial grid:");
         printGrid();
 
         for (int step = 1; step <= maxSteps; step++) {
             if (isAllClean()) {
-                System.out.println("All cells clean!");
                 break;
             }
             Percept p = getPercept();
             Action a = agent.execute(p);
             execute(a);
-            System.out.printf("Step %d: %s -> %s | Score=%d%n",
-                    step, p, a, score);
         }
-        System.out.println("Final grid:");
         printGrid();
-        System.out.println("Final Score: " + score);
     }
 
-    /** Helper to visualize grid */
     private void printGrid() {
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {

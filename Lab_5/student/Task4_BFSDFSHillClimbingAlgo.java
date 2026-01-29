@@ -21,7 +21,7 @@ public class Task4_BFSDFSHillClimbingAlgo {
         frontierSet.add(initialState);
 
         int iterations = 0;
-        int maxIterations = 50000; // Limit to prevent memory issues
+        int maxIterations = 50000;
 
         while (!frontier.isEmpty() && iterations < maxIterations) {
             iterations++;
@@ -30,7 +30,7 @@ public class Task4_BFSDFSHillClimbingAlgo {
             frontierSet.remove(current);
 
             if (current.equals(goalState)) {
-                System.out.println("BFS: Found solution in " + iterations + " iterations, explored " + explored.size() + " states");
+                System.out.println("found solution in " + iterations + " iterations, explored " + explored.size() + " states");
                 return current;
             }
 
@@ -46,12 +46,14 @@ public class Task4_BFSDFSHillClimbingAlgo {
         }
 
         if (iterations >= maxIterations) {
-            System.out.println("BFS: Reached iteration limit (" + maxIterations + "), explored " + explored.size() + " states");
+            System.out.println("iteration limit (" + maxIterations + "), explored " + explored.size() + " states");
         } else {
-            System.out.println("BFS: No solution found after " + iterations + " iterations");
+            System.out.println("no solution found after " + iterations + " iterations");
         }
         return null;
-    }    //	Task 4.2
+    }    
+    
+    //	Task 4.2
     // run Depth first search
 
     public Node executeDFS(Puzzle p) {
@@ -67,7 +69,7 @@ public class Task4_BFSDFSHillClimbingAlgo {
         frontierSet.add(initialState);
 
         int iterations = 0;
-        int maxIterations = 50000; // Limit for DFS to prevent infinite loops
+        int maxIterations = 50000; 
 
         while (!frontier.isEmpty() && iterations < maxIterations) {
             iterations++;
@@ -76,7 +78,7 @@ public class Task4_BFSDFSHillClimbingAlgo {
             frontierSet.remove(current);
 
             if (current.equals(goalState)) {
-                System.out.println("DFS: Found solution in " + iterations + " iterations, explored " + explored.size() + " states");
+                System.out.println("found solution in " + iterations + " iterations, explored " + explored.size() + " states");
                 return current;
             }
 
@@ -92,9 +94,9 @@ public class Task4_BFSDFSHillClimbingAlgo {
         }
 
         if (iterations >= maxIterations) {
-            System.out.println("DFS: Reached iteration limit (" + maxIterations + "), explored " + explored.size() + " states");
+            System.out.println("iteration limit (" + maxIterations + "), explored " + explored.size() + " states");
         } else {
-            System.out.println("DFS: No solution found after " + iterations + " iterations");
+            System.out.println("no solution found after " + iterations + " iterations");
         }
         return null;
     }
@@ -114,7 +116,7 @@ public class Task4_BFSDFSHillClimbingAlgo {
             iterations++;
 
             if (current.equals(goalState)) {
-                System.out.println("Hill Climbing: Found solution in " + iterations + " iterations");
+                System.out.println("found solution in " + iterations + " iterations");
                 return current;
             }
 
@@ -132,16 +134,16 @@ public class Task4_BFSDFSHillClimbingAlgo {
                 }
             }
 
-            // If no improvement, we're stuck at a local minimum
+     
             if (bestChild == null || bestChild.getH() >= current.getH()) {
-                System.out.println("Hill Climbing: Stuck at local minimum after " + iterations + " iterations, h=" + current.getH());
+                System.out.println("stuck at local minimum after " + iterations + " iterations, h=" + current.getH());
                 return null;
             }
 
             current = bestChild;
         }
 
-        System.out.println("Hill Climbing: Reached iteration limit (" + maxIterations + ")");
+        System.out.println("reached iteration limit (" + maxIterations + ")");
         return null;
     }
 }
