@@ -6,8 +6,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Node {
-	private List<Integer> data = new ArrayList<Integer>();
-	private List<Node> children = new ArrayList<Node>();
+	private List<Integer> data = new ArrayList<>();
+	private List<Node> children = new ArrayList<>();
 
 	public void add(Integer val) {
 		this.data.add(val);
@@ -69,13 +69,7 @@ public class Node {
 		return false;
 	}
 
-	public static final Comparator<Integer> DESCOMPARATOR = new Comparator<Integer>() {
-
-		@Override
-		public int compare(Integer o1, Integer o2) {
-			return o2.compareTo(o1);
-		}
-	};
+	public static final Comparator<Integer> DESCOMPARATOR = (o1, o2) -> o2.compareTo(o1);
 
 	@Override
 	public String toString() {
@@ -101,9 +95,9 @@ public class Node {
 
 	public static List<List<Integer>> devideData(int data){
 		List<Integer> part;
-		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<List<Integer>> result = new ArrayList<>();
 		for(int i = 1; i <= data/2; i++) {
-			part = new ArrayList<Integer>();
+			part = new ArrayList<>();
 			part.add(i);
 			part.add(data - i);
 			result.add(part);
